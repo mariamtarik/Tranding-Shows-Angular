@@ -1,0 +1,25 @@
+<div class="container py-5">
+<div class="row">
+ <div class="col-md-4">
+     <img class="w-100 mt-4" src="https://image.tmdb.org/t/p/original/{{detailsMovies?.poster_path}}" alt="">
+ </div>
+ <div class="col-md-8">
+     <div class="mt-5 ml-4">
+        <h3 >{{detailsMovies?.title}}{{detailsMovies?.name}}</h3>
+        <p class="welcome mt-1">{{detailsMovies?.tagline}}</p>
+        <button *ngFor='let gen of detailsMovies?.genres' class="btn btn-info m-2">{{gen.name}}</button>
+        <div >
+            <h5>vote: {{detailsMovies?.vote_average}}</h5>
+            <h5>vote count: {{detailsMovies?.vote_count}}</h5>
+            <h5>popularity: {{detailsMovies?.popularity}}</h5>
+            <h5>releasedate: {{detailsMovies?.release_date}}</h5>
+            <p class="welcome">{{detailsMovies?.overview}}</p>
+        </div>
+     </div>
+
+ </div>
+</div>
+
+
+
+</div>

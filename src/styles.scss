@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$navColor:#8b8b8b3d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+
+body{
+    background-color: #131722;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color:$fontColor
+}
+a{
+    color:#fff;
+}
+a:hover{
+    color: #17a2b8
+}
+nav{
+    background-color: #8b8b8b3d;
+}
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 0.25rem;
+}
+.navbar-toggler-icon{
+  
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+h1{
+    color:#17a2b8;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+// label{
+//     color:#17a2b8;
+//     font-family: Georgia, 'Times New Roman', Times, serif
+// }

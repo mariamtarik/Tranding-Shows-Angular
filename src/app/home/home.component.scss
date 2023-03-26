@@ -1,0 +1,15 @@
+@import '../../styles.scss';
+.brdr{
+    border: $borderColor $borderHeight solid;
+}
+.welcome{
+    color: $secondFontColor;
+}
+.vote{
+    background-color: $lightBgColor;
+    padding: 5px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}

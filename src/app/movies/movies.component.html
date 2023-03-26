@@ -1,0 +1,20 @@
+
+    <div class="container my-2">
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="mt-5">
+                    <div class="brdr w-25 mb-3"></div>
+            <h2>Trending <br>movies <br>To show now</h2>
+            <span class="welcome">most watched movies by day</span>
+            <div class="brdr w-100 mt-3"></div>
+                </div>
+            </div>
+            <div *ngFor="let movie of trendingMovies" class="col-md-2 mb-3">
+                <div class="mt-5">
+                    <img  class="w-100 mb-3"src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" alt="">
+                    <h4>{{movie.title}}</h4>
+                </div>
+            </div>
+            </div>
+
+    </div>

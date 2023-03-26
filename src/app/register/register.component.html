@@ -1,0 +1,68 @@
+<section class="mt-5 d-flex align-items-center justify-content-center ">
+    <div class="content m-auto w-75 p-3 mt-5 ">
+<h1 class="text-center "> Register Form</h1>
+<div *ngIf='error '>
+    <p class="text-danger text-center fa-2x">{{error}}</p>
+</div>
+<form class="w-75 mx-auto" [formGroup]='registerForm' (ngSubmit)='register()'    >
+    <div class="form-group">
+        <label for="">First Name</label>
+        <input [class.is-invalid]='registerForm.controls.first_name.invalid&&registerForm.controls.first_name.touched' 
+        [class.is-valid]='registerForm.controls.first_name.valid&&registerForm.controls.first_name.touched' 
+        class="form-control mb-2 text-white bg-transparent" type="text" formControlName="first_name">
+        <div *ngIf='registerForm.get("first_name")?.errors !=null&&registerForm.get("first_name")?.touched'>
+            <span *ngIf='registerForm.get("first_name")?.errors?.required'  class="text-danger ">first name is required</span>
+            <span *ngIf='registerForm.get("first_name")?.errors?.minlength'  class="text-danger ">first name is minlength 3</span>
+            <span *ngIf='registerForm.get("first_name")?.errors?.maxlength'  class="text-danger ">first name is maxlength 10</span>
+        </div>
+     
+    </div>
+    <div class="form-group">
+        <label for="">last Name</label>
+        <input  [class.is-invalid]='registerForm.controls.last_name.invalid&&registerForm.controls.last_name.touched'
+        [class.is-valid]='registerForm.controls.last_name.valid&&registerForm.controls.last_name.touched'
+        class="form-control mb-2 text-white bg-transparent" type="text" formControlName="last_name">
+        <div *ngIf='registerForm.get("last_name")?.errors !=null&&registerForm.get("last_name")?.touched'>
+            <span *ngIf='registerForm.get("last_name")?.errors?.required'  class="text-danger ">last name is required</span>
+            <span *ngIf='registerForm.get("last_name")?.errors?.minlength'  class="text-danger ">last name is minlength 3</span>
+            <span *ngIf='registerForm.get("last_name")?.errors?.maxlength'  class="text-danger ">last name is maxlength 10</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Age</label>
+        <input [class.is-invalid]='registerForm.controls.age.invalid&&registerForm.controls.age.touched' 
+        [class.is-valid]='registerForm.controls.age.valid&&registerForm.controls.age.touched' 
+        class="form-control mb-2 text-white bg-transparent" type="number" formControlName="age">
+        <div *ngIf='registerForm.get("age")?.errors !=null&&registerForm.get("age")?.touched'>
+            <span *ngIf='registerForm.get("age")?.errors?.required'  class="text-danger ">age is required</span>
+            <span *ngIf='registerForm.get("age")?.errors?.min'  class="text-danger ">age is min 16</span>
+            <span *ngIf='registerForm.get("age")?.errors?.max'  class="text-danger ">age is max 60</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input [class.is-invalid]='registerForm.controls.email.invalid&&registerForm.controls.email.touched'
+        [class.is-valid]='registerForm.controls.email.valid&&registerForm.controls.email.touched'
+        class="form-control mb-2 text-white bg-transparent" type="email" formControlName="email">
+        <div *ngIf='registerForm.get("email")?.errors !=null&&registerForm.get("email")?.touched'>
+            <span *ngIf='registerForm.get("email")?.errors?.required'  class="text-danger ">email is required</span>
+            <span *ngIf='registerForm.get("email")?.errors?.email'  class="text-danger ">email in invalied</span>
+         
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="">Password</label>
+        <input  [class.is-invalid]='registerForm.controls.password.invalid&&registerForm.controls.password.touched'
+        [class.is-valid]='registerForm.controls.password.valid&&registerForm.controls.password.touched'
+        class="form-control mb-2 text-white bg-transparent" type="password" formControlName="password">
+        <div *ngIf='registerForm.get("password")?.errors !=null&&registerForm.get("password")?.touched'>
+            <span *ngIf='registerForm.get("password")?.errors?.required'  class="text-danger ">password is required</span>
+            <span *ngIf='registerForm.get("password")?.errors?.pattern'  class="text-danger ">password must start capital and 3-8 any character from(a-z or 0-9) </span>
+         
+        </div>
+    </div>
+    <button [disabled]='registerForm.invalid' class="btn btn-info" type="submit">Register</button>
+    <p class="text-white pb-5 mt-3">You have an account?<a routerLink="login"class="text-white">Login</a></p>
+</form>
+</div>
+</section>

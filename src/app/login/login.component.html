@@ -1,0 +1,43 @@
+<section class="mt-5 d-flex align-items-center justify-content-center">
+    <div class="content m-auto w-75 p-3 mt-5">
+
+        <div>
+        
+            <h1 class="text-center pt-5 "> Login Form</h1>
+        </div>
+           
+        <div *ngIf='error '>
+            <p class="text-danger text-center fa-2x">{{error}}</p>
+        </div>
+        <form class="w-75 mx-auto" [formGroup]='loginForm' (ngSubmit)='login()'    >
+            <div class="form-group">
+                <label  for="">Email</label>
+                <input [class.is-invalid]='loginForm.controls.email.invalid&&loginForm.controls.email.touched'
+                [class.is-valid]='loginForm.controls.email.valid&&loginForm.controls.email.touched'
+                class="form-control mb-2 bg-transparent text-white " type="email" formControlName="email">
+                <div *ngIf='loginForm.get("email")?.errors !=null&&loginForm.get("email")?.touched'>
+                    <span *ngIf='loginForm.get("email")?.errors?.required'  class="text-danger ">email is required</span>
+                    <span *ngIf='loginForm.get("age")?.errors?.email'  class="text-danger ">email in invalied</span>
+                 
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input  [class.is-invalid]='loginForm.controls.password.invalid&&loginForm.controls.password.touched' 
+                [class.is-valid]='loginForm.controls.password.valid&&loginForm.controls.password.touched'
+                class="form-control mb-2 bg-transparent text-white " type="password" formControlName="password">
+                <div *ngIf='loginForm.get("password")?.errors !=null&&loginForm.get("password")?.touched'>
+                    <span *ngIf='loginForm.get("password")?.errors?.required'  class="text-danger ">password is required</span>
+                    <span *ngIf='loginForm.get("password")?.errors?.pattern'  class="text-danger ">password must start capital and 3-8 any character from(a-z or 0-9) </span>
+                 
+                </div>
+            </div>
+            <button [disabled]='loginForm.invalid' class="btn btn-info" type="submit">login</button>
+            <p class="text-white pb-5 pt-3">Don’t have an account?<a routerLink='register' class="text-white">Register</a></p>
+        </form>
+    
+    
+    </div>
+    
+</section>
+

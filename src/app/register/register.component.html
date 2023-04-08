@@ -27,7 +27,7 @@
             <span *ngIf='registerForm.get("last_name")?.errors?.minlength'  class="text-danger ">last name is minlength 3</span>
             <span *ngIf='registerForm.get("last_name")?.errors?.maxlength'  class="text-danger ">last name is maxlength 10</span>
         </div>
-    </div>
+    </div> 
     <div class="form-group">
         <label for="">Age</label>
         <input [class.is-invalid]='registerForm.controls.age.invalid&&registerForm.controls.age.touched' 

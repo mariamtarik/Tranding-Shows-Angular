@@ -31,7 +31,8 @@ this._AuthService.signUp(this.registerForm.value).subscribe((data)=>{
 this._Router.navigate(['/login'])
   }
   else{
-this.error=data.message;
+// console.log(data)
+this.error=data.errors.email.message
 this.registerForm.reset();
   }
 })
